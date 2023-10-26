@@ -5,6 +5,7 @@ metadata:
   generateName: enable-alerts-
   annotations:
     argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/sync-wave: "30"
   labels:
     codefresh.io/cert: enable-job  
 spec:
@@ -15,6 +16,6 @@ spec:
         image: alpine
         command:
           - "sleep"
-          - "30"
+          - "3"
       restartPolicy: Never
   backoffLimit: 2    
